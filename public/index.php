@@ -47,7 +47,16 @@ function convertTz($datetime_text)
 
     <p class="page-title">ひとこと掲示板</p>
     <hr class="page-divider" />
+  
     <!-- 投稿用フォーム -->
+    
+    <?php if ($messages['action_success_text'] !== '') { ?>
+      <div class="action-success-area"><?php echo $messages['action_success_text']; ?></div>
+    <?php } ?>
+    <?php if ($messages['action_error_text'] !== '') { ?>
+      <div class="action-failed-area"><?php echo $messages['action_error_text']; ?></div>
+    <?php } ?>
+
     <div class="form-cover">
       <!--meyod属性の「POST」による送信を行うことで、リソースの送信を行います。  -->
       <!-- URL ではなく、メッセージボディに設定されるため、パスワードやユーザ情報などの機密性の高いデータを送信するのに用いられます -->
